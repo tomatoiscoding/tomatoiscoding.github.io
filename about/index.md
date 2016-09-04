@@ -5,33 +5,21 @@ tags: [about, Jekyll, theme, moon]
 date: 2016-09-03
 comments: false
 ---
-    
-I'm Beilei Bian.
 
-## Features
-* Minimal, you can focus on your content
-* Responsive
-* Disqus integration
-* Syntax highlighting
-* Optional post image
-* Social icons
-* Page for sharing projects
-* Optional background image
-* Simple navigation menu
-* MathJax support
+I'm Beilei Bian. I got my Master Degree in School of Statistics from [Renmin University of China](http://www.ruc.edu.cn). During these 2 years, my research interest is solving real world problems with computational statistics methods. My mentor is Prof.YangLi who is a smart, hard-working and easy-going character. I think it's difficult for me to make progress in statistics without his help. So thanks a lot??
 
-## Preview
+Before that I got my BSc in College of Animal Science and Technology from [China Agricultural University](http://www.cau.edu.cn). Animal Science is an very interesing area which mainly focuses on animal genetics, nutrition, reproduction, animal welfare... Thanks CAU, she always taught me how to be a better man.
 
-{% capture images %}
-    https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
-    https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-{% endcapture %}
-{% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
+Now I'm an algorithm engineer @WeGene, Shenzhen. My research interest is machine learning and data mining in large scale genomic data. I think we'll do our best in DNA to Customer in China even in all over the world.
 
-See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.
+## Hobbies
 
-## Getting Started
+* Jogging
+* Appreciating almost all kinds of music
+* Programming
+* Cooking
 
-To learn how to install and use this theme check out the [Setup Guide](http://taylantatli.me/Moon/moon-theme/) for more information.
-      
-[Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
+## Email
+
+* bblzuiaimessi@gmail.com
+* bianbeilei@wegene.com
