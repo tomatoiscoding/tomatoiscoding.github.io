@@ -9,3 +9,5 @@ comments: true
 ---
 
 ## Living @Shenzhen
+
+看看是否支持中文～
