@@ -3,8 +3,6 @@ layout: post
 title: "Let's talk imbalanced data in machine learning（一）"
 date: 2016-09-10
 Stats & CS:true
-tag:
-- imbalanced data
 comments: true
 
 ---
