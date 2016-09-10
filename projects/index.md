@@ -1,6 +1,6 @@
 ---
-layout: project
-title: All Projects
-excerpt: "A List of Projects"
+layout: Stats & CS
+title: All Discussions
+excerpt: "List"
 comments: false
 ---
