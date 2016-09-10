@@ -1,6 +1,6 @@
 ---
 layout: Stats & CS
-title: "写在开篇"
+title: "Let's talk about imbalanced data(1)"
 date: 2016-09-10
 Stats & CS: true
 comments: true
