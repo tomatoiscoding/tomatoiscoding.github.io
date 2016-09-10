@@ -1,7 +1,7 @@
 # Site
 title:              WELCOME TO MY HOMEPAGE
-bio:                'Work ：） Life ：） Balance ：）'
-description:        "Stories about my life, my work and my future."
+bio:                'Stories about my life, my work and my future'
+description:        "Coding is fun, collaborative and creative."
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
