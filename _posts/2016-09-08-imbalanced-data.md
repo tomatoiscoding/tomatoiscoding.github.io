@@ -1,8 +1,8 @@
 ---
-layout: post
-title: "Let's talk imbalanced data in machine learning（一）"
+layout: Stats & CS
+title: "写在开篇"
 date: 2016-09-10
-Stats & CS:true
+Stats & CS: true
 comments: true
 
 ---
