@@ -24,8 +24,9 @@ Dream of being an excellent Data Scientist and a qualified front-end engineer. M
 ## Programming Languages I'm interested in
 
 * Big fun of R
-* know syntax of Python
-* also interested in learning C, C++(just for computing), html, css and javascript(I think they are useful in data visualization)
+* know syntax of Python but never use😂
+* also interested in learning C, C++ (mainly focuses on improving speed of R code), html, css and javascript (I think they are useful in data visualization)
+* SAS, Mysql (have forgotten😈)
 
 ## Email
 
