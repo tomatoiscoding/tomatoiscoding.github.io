@@ -2,7 +2,7 @@
 layout: post
 title: "Let's talk about imbalanced data(1)"
 date: 2016-09-10
-Stats & CS: true
+Stats and CS: true
 comments: true
 
 ---
