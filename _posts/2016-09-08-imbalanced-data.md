@@ -29,7 +29,7 @@ comments: true
 
 	举个🌰：
 	
-	在生物医药领域，我们想用机器学习的方法根据一些predictors去预测一个人是否患癌症，现在不是也有好多医学影像数据吗！图像处理完也是一堆数值变量！anyway，我们要预测一个人是否患癌症。那么这个时候你会发现，我们的traning set里面，假设总共10000个人（这在生物医药圈儿样本量可真大！），可能只有20个人发病（你想想癌症的发病率也知道，当然是健康人远多于患病的人）。好了！样本量真大，我要建模了，肯定效果特别好！于是你建了个Decision Tree, Neural Networks, SVM, Logistic Regression，甚至你用了高大上的组合算法，random forest, Adaboost。然后拿来了testing set看看模型的performance吧，咦，我这一算，overall accuracy 99.8%！真是几乎完美的模型啊！但单纯的你可能不知道，有俩指标叫TPR和TNR，分别去算算看～
+	在生物医药领域，我们想用机器学习的方法根据一些predictors去预测一个人是否患癌症，现在不是也有好多医学影像数据吗！图像处理完也是一堆数值变量！anyway，我们要预测一个人是否患癌症。那么这个时候你会发现，我们的training set里面，假设总共10000个人（这在生物医药圈儿样本量可真大！），可能只有20个人发病（你想想癌症的发病率也知道，当然是健康人远多于患病的人）。好了！样本量真大，我要建模了，肯定效果特别好！于是你建了个Decision Tree, Neural Networks, SVM, Logistic Regression，甚至你用了高大上的组合算法，random forest, Adaboost。然后拿来了testing set看看模型的performance吧，咦，我这一算，overall accuracy 99.8%！真是几乎完美的模型啊！但单纯的你可能不知道，有俩指标叫TPR和TNR，分别去算算看～
 	
 	- What's TPR and What's TNR?
 	
