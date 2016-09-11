@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "Let's talk imbalanced data in machine learning（一）"
+title: "Let's talk about imbalanced data(1)"
 date: 2016-09-10
-Stats & CS:true
-tag:
-- imbalanced data
+Stats & CS: true
 comments: true
 
 ---
