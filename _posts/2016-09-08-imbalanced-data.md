@@ -31,7 +31,7 @@ comments: true
 
 	举个🌰：
 	
-	在生物医药领域，我们想用机器学习的方法根据一些predictors去预测一个人是否患癌症，现在不是也有好多医学影像数据吗！图像处理完也是一堆数值变量！anyway，我们要预测一个人是否患癌症。那么这个时候你会发现，我们的traing set里面，假设总共10000个人（这在生物医药圈儿样本量可真大！），可能只有20个人发病（你想想癌症的发病率也知道，当然是健康人远多于患病的人）。好了！样本量真大，我要建模了，肯定效果特别好！于是你建了个Decision Tree, Neural Networks, SVM, Logistic Regression，甚至你用了高大上的组合算法，random forest, Adaboost。然后拿来了testing set看看模型的performance吧，咦，我这一算，overall accuracy 99.8%！真是几乎完美的模型啊！但单纯的你可能不知道，有俩指标叫TPR和TNR，分别去算算看～
+	在生物医药领域，我们想用机器学习的方法根据一些predictors去预测一个人是否患癌症，现在不是也有好多医学影像数据吗！图像处理完也是一堆数值变量！anyway，我们要预测一个人是否患癌症。那么这个时候你会发现，我们的traning set里面，假设总共10000个人（这在生物医药圈儿样本量可真大！），可能只有20个人发病（你想想癌症的发病率也知道，当然是健康人远多于患病的人）。好了！样本量真大，我要建模了，肯定效果特别好！于是你建了个Decision Tree, Neural Networks, SVM, Logistic Regression，甚至你用了高大上的组合算法，random forest, Adaboost。然后拿来了testing set看看模型的performance吧，咦，我这一算，overall accuracy 99.8%！真是几乎完美的模型啊！但单纯的你可能不知道，有俩指标叫TPR和TNR，分别去算算看～
 	
 	- What's TPR and What's TNR?
 	
@@ -65,3 +65,7 @@ FAQ：只讲了有监督，那么无监督学习会有不平衡问题吗？
 A：答案是肯定的！无监督也存在不平衡问题。像clustering，虽然我们不能观测到Y，但是它还是有一个潜在的unobserved Y，所以这个时候，如果某类样本点很少的话，聚类也是会出问题的。但研究这个问题的人很少，因为我们无法给出一个比较好的criterion去衡量这个不平衡。以后会不会有人去探究这个问题呢？本媛媛先去搜搜论文！
 
 讲到这里，只是抛砖引玉出了这个问题，有了一个基本概念了吧？下一篇会具体从data-level和algorithm-level继续讲述如何解决这个问题～如果有说错的，请评论告诉我吼～
+
+## Citation
+
+Imbalanced learning: foundations, algorithms, and applications[M]. John Wiley & Sons, 2013.
