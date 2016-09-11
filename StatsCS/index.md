@@ -1,5 +1,5 @@
 ---
-layout: Stats & CS
+layout: StatsCS
 title: All Discussions
 excerpt: "List"
 comments: false
