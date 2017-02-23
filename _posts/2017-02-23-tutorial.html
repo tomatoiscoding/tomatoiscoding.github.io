@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tutorial for radmixture</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Beilei Bian" />
+    <link rel="stylesheet" href="tutorial.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse
+
+# Tutorial for radmixture
+### Beilei Bian
+### 2017/02/14
+
+---
+
+
+
+
+
+# What is radmixture?
+
+- radmixture is an R package for ancestry analysis. 
+
+- If you have raw data as follow, you can calculate ancestry components with different datasets in this package. 
+
+
+```
+#&gt;        rsid chromosome position genotype
+#&gt; 1 rs8179414          1   565400       CC
+#&gt; 2 rs9701055          1   565433       --
+#&gt; 3 rs9645428          1   566810       GG
+#&gt; 4 rs1972379          1   567697       AA
+#&gt; 5 rs9699555          1   567709       AA
+#&gt; 6 rs2853819          1   567807       CC
+```
+
+---
+
+### Usage
+
+You can install:
+
+- the latest version from CRAN with
+
+
+```r
+install.packages("radmixture")
+```
+
+- the latest development version from github with
+
+
+```r
+devtools::install_github("wegene-llc/radmixture")
+```
+
+And then
+
+
+```r
+library(radmixture)
+```
+
+---
+class: center, middle, inverse
+
+# Calculate your ancestry components with WeGeneK20
+---
+### Prepare your dataset
+
+Before doing calculation, you must prepare your raw data like this:
+
+
+```
+#&gt;        rsid chromosome position genotype
+#&gt; 1 rs8179414          1   565400       CC
+#&gt; 2 rs9701055          1   565433       --
+#&gt; 3 rs9645428          1   566810       GG
+#&gt; 4 rs1972379          1   567697       AA
+#&gt; 5 rs9699555          1   567709       AA
+#&gt; 6 rs2853819          1   567807       CC
+```
+
+&lt;p&gt;&lt;span style="color:red;"&gt;Pay Attention!&lt;/span&gt; Each line has four fields separated by whitespace: SNPID CHROMOSOME POSITION GENOTYPE&lt;/p&gt;
+Please organize your raw data like this. If your raw data have headers, remove it.
+
+Two functions will help you calculate your result!
+
+- `tfrd()`: Transfer your raw data to a format understood by radmixture.
+- `qn()`: Calculate your ancestry components result.
+
+---
+
+### For example
+
+- Step1: Read your raw data into R with
+
+```r
+genotype &lt;- read.table(file = 'path_to_file')
+genotype &lt;- read.csv(file = 'path_to_file')
+```
+
+It depends on your raw data format. Here genotype is a dataframe with 4 columns.
+
+- Step2: Use `tfrd()` function to transfer your raw data to G matrix and get F matrix accordingly.
+
+```r
+res &lt;- tfrd(genotype, wegene20.alleles, wegene20.ped, wegene20.20.F)
+```
+
+- Step3: Calculate
+
+```r
+ances &lt;- qn(res`\(g, wegene20.reference, res\)`f, 1e-4, 'BR', 'supervised')
+```
+- Step4: `ances$q` is your WeGeneK20 result.
+
+---
+class: center, middle, inverse
+
+# Calculate your ancestry components with public dataset
+
+---
+This package also provides K4 dataset from Dodecad project and an E11 dataset.
+
+The procedure is similar to those mensioned in last slide.
+
+- Use the two functions:
+    - `tfrdpub()`: Transfer your raw data to a format understood by radmixture.
+    - `f.fix.qn()`: Calculate your ancestry components result.
+
+---
+### For example
+
+- Step1: Read your raw data into R with
+
+```r
+genotype &lt;- read.table(file = 'path_to_file')
+genotype &lt;- read.csv(file = 'path_to_file')
+```
+
+It depends on your raw data format. Here genotype is a dataframe with 4 columns.
+
+- Step2: Use K4 dataset transfer your raw data
+
+```r
+res &lt;- tfrdpub(genotype, 4, global4.alleles, global4.4.F)
+```
+- Step3: Calculate
+```r
+ances &lt;- f.fix.qn(res`\(g, res\)`q, res$f, 1e-4, 'BR', pubdata = "K4")
+```
+- Step4: `ances$q` is your K4 result.
+---
+### Pay attention
+- `qn()` is the fastest function for both supervised and unsupervised learning.
+I recommend you set `method = "BR"` which is faster than EM.
+- `f.fix.qn()` is the fastest function for ancestry analysis when frequency matrix is fixed. Here
+I also recommend you set `method = "BR"`.
+---
+class: center, middle, inverse
+# Some problems you may encounter
+
+---
+It looks fantastic, right? However, you may encounter some wierd problems.
+
+- If you get this error message in your console when you use `qn()`, please change `method = "BR"` to `method = "EM"`
+which is more stable but slower than BR.
+
+.center[![](img2.png)]
+
+```r
+ances &lt;- qn(res`\(g, wegene20.reference, res\)`f, 1e-4, 'EM', 'supervised')
+```
+- If you get the same error when you use `f.fix.qn()`, please use `f.fix.em()`. Do not change `method = "BR"` to `method = "EM"` since the quasi-Newton EM here is not very accurate for fixed frequency matrix.
+---
+class: center, middle, inverse
+
+# Q &amp; A
+
+---
+- Why my WeGeneK20 result seems a little bit unreasonable?
+
+Since WeGeneK20 choose about 80,000 SNPs for calculation and the number of overlap SNPs between
+WeGene index file and your raw data may be less than that can get an accurate result.
+
+- How long should I wait for the admixture analysis?
+    - For WeGeneK20, you should wait 15min to a few hours. Different genotype data need different 
+    length of time. It is difficult to estimate.
+    - For public dataset, you just need to wait about 1 minute to get your result.
+    
+- Besides WeGeneK20, K4 and E11, are there any dataset I can use?
+
+To keep the size of this package small, we don't involve many dataset in it. You can go to [Dodecad Project](http://dodecad.blogspot.com) get more information.
+---
+
+### Contributions
+
+Any types of suggestions are welcome. Including but not limited to making constrained
+quadratic programming more stable, improving algorithm performance in R...
+
+Report bug issues on [issue page](https://github.com/wegene-llc/radmixture/issues).
+
+We welcome contributions on radmixture. You can fork this repo and make your changes and submit a pull request.
+---
+class: center, middle, inverse
+# Thanks
+###Beilei Bian
+###bianbeilei@wegene.com
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('showSlide', function (slide) {setTimeout(function() {window.dispatchEvent(new Event('resize'));}, 100)});</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
