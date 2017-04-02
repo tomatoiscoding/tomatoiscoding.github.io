@@ -157,7 +157,7 @@ map(.x, .f, ...)
 1:10 %>%
 	map_dbl(function(x) x ^ 2)
 ```
-另一个拍扁方法是`flatten()`家族。其中`flatten()`一定返回list，家族有：`flatten_lgl()``flatten_dbl()``flatten_chr()``flatten_int()``flatten_df()`
+另一个拍扁方法是`flatten()`家族。其中`flatten()`一定返回list，家族有：`flatten_lgl()` `flatten_dbl()` `flatten_chr()` `flatten_int()` `flatten_df()`
 
 为了体会其功效，专门写一个复杂的list套list的情况：
 
@@ -193,9 +193,9 @@ flatten(list1) %>%
 
 ### `reduce()`家族
 
-成员：`reduce()``reduce_right()``reduce2()``reduce2_right()`
+成员：`reduce()` `reduce_right()` `reduce2()` `reduce2_right()`
 
-药效一致：`accumulate()``accumulate_right()`
+药效一致：`accumulate()` `accumulate_right()`
 
 同js里面的`reduce()`方法，它会把`list`或者`vector`以某种方法浓缩成一个，这个方法就是你定义的函数。
 
@@ -225,10 +225,10 @@ a %>%
 |   javascript   |   R   |
 |:------:|:-----:|
 |`map()` |`map()`家族|
-|`reduce()``reduceRight()`|`reduce()`家族|
+|`reduce()` `reduceRight()`|`reduce()`家族|
 |`every()`|`every()`|
 |`some()`|`some()`|
-|`indexOf()``lastIndexOf()`|`detect_index()`|
+|`indexOf()` `lastIndexOf()`|`detect_index()`|
 |`find()`|`detect()`|
 |`invoke()`|`invoke()`家族|
 |`flatten()`|`flatten()`家族|
@@ -237,7 +237,7 @@ a %>%
 
 不同语言之间的相互借鉴非常之有趣吧～
 
-但我开篇提到了spark，其实是闲来无聊看了看spark发现了几个对`RDD`的求值操作才决定把这篇写掉的。不过在spark中用到类似函数一点都不奇怪啦～毕竟人家生来就是折腾大数据的。`RDD`是什么我就不过多解释，就把它想成一个大大的数据集。对于分布式计算呢，它会被分成多个分区，然后每个分区单独操作。在转化操作中，`map()``flatMap()``filter()``reduce()``foreach()``fold()`比较常用。以python和scalar中为例（java太残暴），你或许能看懂什么了。
+但我开篇提到了spark，其实是闲来无聊看了看spark发现了几个对`RDD`的求值操作才决定把这篇写掉的。不过在spark中用到类似函数一点都不奇怪啦～毕竟人家生来就是折腾大数据的。`RDD`是什么我就不过多解释，就把它想成一个大大的数据集。对于分布式计算呢，它会被分成多个分区，然后每个分区单独操作。在转化操作中，`map()` `flatMap()` `filter()` `reduce()` `foreach()` `fold()`比较常用。以python和scalar中为例（java太残暴），你或许能看懂什么了。
 
 ```python
 nums = sc.parallelize([1, 2, 3, 4])
