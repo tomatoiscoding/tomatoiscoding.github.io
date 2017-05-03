@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-date: 2016-09-03
+date: 2017-05-02
 comments: false
 ---
 
@@ -9,9 +9,7 @@ I'm Beilei Bian. I got my Master Degree in School of Statistics from [Renmin Uni
 
 Before that I got my BSc in College of Animal Science and Technology from [China Agricultural University](http://www.cau.edu.cn). Animal Science is a very interesing area which mainly focuses on animal genetics, nutrition, reproduction, animal welfare... Thanks CAU, she always taught me how to be a better man.
 
-Now I'm a bioinformatician/software engineer/algorithm engineer [@WeGene](https://www.wegene.com), Shenzhen. My research interest is machine learning and data visualization in large scale genomic data. I think we'll do our best in DNA to Customer area in China even in all over the world.
 
-Dream of being an excellent Data Scientist and a qualified front-end engineer. Maybe after 3 years, I'm just an excellent chef, lol...
 
 ## Hobbies
 
@@ -31,4 +29,3 @@ Dream of being an excellent Data Scientist and a qualified front-end engineer. M
 ## Email
 
 * bblzuiaimessi@gmail.com
-* bianbeilei@wegene.com
