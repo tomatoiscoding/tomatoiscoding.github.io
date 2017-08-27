@@ -61,7 +61,7 @@ instagram:          tianyu0928timeline
 #hackernews:        username
 
 # Gems
-gems:
+plugins:
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
